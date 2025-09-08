@@ -58,8 +58,8 @@ const updateProduct = async (req, res) => {
     const product = await NProduct.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true } 
-    ).select("name price description category image"); 
+      { new: true, runValidators: true } 
+    ).select("name price description category image");
 
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
@@ -73,6 +73,7 @@ const updateProduct = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 
 
 
