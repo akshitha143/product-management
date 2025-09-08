@@ -35,11 +35,19 @@ const addProduct = async (req, res) => {
       image,
     });
 
-    res.status(201).json(product);
+    
+    res.status(201).json({
+      name: product.name,
+      price: product.price,
+      description: product.description,
+      category: product.category,
+      image: product.image,
+    });
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }
 };
+
 
 
 
