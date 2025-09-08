@@ -3,7 +3,7 @@ const NProduct = require("../models/NProduct");
 
 const getProducts = async (req, res) => {
   try {
-    let products = await NProduct.find();
+    let products = await NProduct.find().select("name price description category image");
 
     if (req.query.sort === "asc") {
       products = products.sort((a, b) => a.price - b.price);
@@ -13,9 +13,11 @@ const getProducts = async (req, res) => {
 
     res.status(200).json(products);
   } catch (err) {
-    res.status(500).json({ message:err.message  });
+    res.status(500).json({ message: err.message });
   }
 };
+
+
 
 const addProduct = async (req, res) => {
   try {
