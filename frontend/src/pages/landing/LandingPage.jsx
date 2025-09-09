@@ -1,56 +1,69 @@
 // src/pages/HomePage.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import { getProducts } from "../../services/productservice";
 
 const LandingPage = ()=> {
     const navigate = useNavigate();
-    const [products,] = useState([
-  {
-    _id: "1",
-    name: "Classic White Sneakers",
-    price: 59.99,
-    category: "Footwear",
-    image: "https://via.placeholder.com/250x200?text=Sneakers",
-  },
-  {
-    _id: "2",
-    name: "Leather Handbag",
-    price: 89.99,
-    category: "Accessories",
-    image: "https://via.placeholder.com/250x200?text=Handbag",
-  },
-  {
-    _id: "3",
-    name: "Smartwatch Pro",
-    price: 149.99,
-    category: "Electronics",
-    image: "https://via.placeholder.com/250x200?text=Smartwatch",
-  },
-  {
-    _id: "4",
-    name: "Denim Jacket",
-    price: 74.99,
-    category: "Clothing",
-    image: "https://via.placeholder.com/250x200?text=Jacket",
-  },
-  {
-    _id: "5",
-    name: "Wireless Earbuds",
-    price: 39.99,
-    category: "Electronics",
-    image: "https://via.placeholder.com/250x200?text=Earbuds",
-  },
-  {
-    _id: "6",
-    name: "Cotton T-Shirt",
-    price: 19.99,
-    category: "Clothing",
-    image: "https://via.placeholder.com/250x200?text=T-Shirt",
-  }
-]);
-
+//  const [products,] = useState([
+//   {
+//     _id: "1",
+//     name: "Classic White Sneakers",
+//     price: 59.99,
+//     category: "Footwear",
+//     image: "https://via.placeholder.com/250x200?text=Sneakers",
+//   },
+//   {
+//     _id: "2",
+//     name: "Leather Handbag",
+//     price: 89.99,
+//     category: "Accessories",
+//     image: "https://via.placeholder.com/250x200?text=Handbag",
+//   },
+//   {
+//     _id: "3",
+//     name: "Smartwatch Pro",
+//     price: 149.99,
+//     category: "Electronics",
+//     image: "https://via.placeholder.com/250x200?text=Smartwatch",
+//   },
+//   {
+//     _id: "4",
+//     name: "Denim Jacket",
+//     price: 74.99,
+//     category: "Clothing",
+//     image: "https://via.placeholder.com/250x200?text=Jacket",
+//   },
+//   {
+//     _id: "5",
+//     name: "Wireless Earbuds",
+//     price: 39.99,
+//     category: "Electronics",
+//     image: "https://via.placeholder.com/250x200?text=Earbuds",
+//   },
+//   {
+//     _id: "6",
+//     name: "Cotton T-Shirt",
+//     price: 19.99,
+//     category: "Clothing",
+//     image: "https://via.placeholder.com/250x200?text=T-Shirt",
+//   }
+// ]);
+    const [products,setProducts] = useState([]);
+    useEffect(()=>{
+        const fetchProducts = async()=>{
+            try{
+                const data = await getProducts();
+                setProducts(data.slice(0, 6));
+            }
+            catch(error){
+                console.error("Error fetching products:", error);
+            }
+        }
+        fetchProducts();
+    },[]);
     return (
         <>
             <section className="hero">

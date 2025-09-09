@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./AddProductPage.css";
+import { createProduct } from "../../services/productservice";
 
-const AddProductPage = ({ onSubmit }) => {
+const AddProductPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     price: "",
@@ -68,13 +69,15 @@ const AddProductPage = ({ onSubmit }) => {
     setErrors((prev) => ({ ...prev, category: "" })); // clear error on select
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      console.log(formData);
-      if (onSubmit) {
-        onSubmit(formData);
-      }
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (validate()) {
+    try {
+      const newProduct = await createProduct(formData);
+      console.log("Product created:", newProduct);
+
+      
       setFormData({
         name: "",
         price: "",
@@ -83,8 +86,15 @@ const AddProductPage = ({ onSubmit }) => {
         image: "",
       });
       setErrors({});
+      
+      alert("Product added successfully!");
+    } catch (error) {
+      console.error("Error creating product:", error);
+      alert("Failed to add product. Please try again.");
     }
-  };
+  }
+};
+
 
   return (
     <div className="add-product-page-section">

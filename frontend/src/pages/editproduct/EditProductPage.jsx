@@ -1,6 +1,7 @@
 import React, {  useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../addproduct/AddProductPage.css";
+import { updateProduct } from "../../services/productservice";
 
 const EditProductPage = () => {
   const { id } = useParams(); // get product ID from URL
@@ -103,29 +104,21 @@ const EditProductPage = () => {
     setErrors((prev) => ({ ...prev, category: "" })); // clear error
   };
 
-  // ✅ Handle submit (update product)
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-      try {
-        const res = await fetch(`/api/products/${id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
+  e.preventDefault();
+  if (validate()) {
+    try {
+      const updated = await updateProduct(id, formData); 
+      console.log("Updated product:", updated);
 
-        if (!res.ok) {
-          throw new Error("Failed to update product");
-        }
-
-        alert("✅ Product updated successfully!");
-        navigate("/products"); // redirect to product list
-      } catch (err) {
-        console.error("Update error:", err);
-        alert("❌ Error updating product");
-      }
+      alert("✅ Product updated successfully!");
+      navigate("/products"); // redirect to product list
+    } catch (err) {
+      console.error("Update error:", err);
+      alert("❌ Error updating product");
     }
-  };
+  }
+};
 
 
 

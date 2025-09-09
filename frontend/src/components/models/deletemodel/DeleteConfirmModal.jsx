@@ -1,8 +1,20 @@
 import React from "react";
 import "./DeleteConfirmModal.css";
+import { deleteProduct } from "../../../services/productservice";
 
-const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, productName }) => {
+const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, product }) => {
   if (!isOpen) return null; 
+  const handleDelete = async () => {
+
+    try {
+      await deleteProduct(product._id);
+      onConfirm()
+      alert("✅ Product deleted successfully!");
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("❌ Error deleting product");
+    }
+  };
 
   return (
     <div className="modal-overlay">
@@ -10,14 +22,14 @@ const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, productName }) => {
         <h2>Delete Product</h2>
         <p>
           Are you sure you want to delete{" "}
-          <strong>{productName || "this product"}</strong>?
+          <strong>{product.name || "this product"}</strong>?
         </p>
 
         <div className="modal-actions">
           <button className="model-btn model-cancel" onClick={onClose}>
             Cancel
           </button>
-          <button className="model-btn model-delete" onClick={onConfirm}>
+          <button className="model-btn model-delete" onClick={handleDelete}>
             Delete
           </button>
         </div>
