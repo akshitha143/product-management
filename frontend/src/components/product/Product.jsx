@@ -12,12 +12,12 @@ const Product = ({product,setProducts})=>{
                 <div className="img-container">
                     <span className="category">{product.category}</span>
                     <span onClick={()=>{setOpenModal(true)}} className="delete-btn"><RiDeleteBinLine/></span>
-                    {product.image && <img src="/images/product.jpg"  alt={product.name} />}
+                    {product.image && <img src={product.image}  alt={product.name} />}
                     <div className="img-overly"></div>
                 </div>
                 <div className="product-detiles">
                     <h3 >{product.name}</h3>
-                    <p className="product-decription">"Do you want me to also generate a more realistic dataset (with descriptions, ratings, stock count), so"</p>
+                    <p className="product-decription">{product.description}</p>
                     <div className="price-btn-container">
                         <p className="price">${product.price}</p>
                         <button onClick={()=>{navigate(`/edit-product/${product._id}`,{ state: { product } })}} className="addcart-btn">Edit Product</button>

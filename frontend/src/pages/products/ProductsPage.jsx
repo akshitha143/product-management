@@ -114,7 +114,6 @@ const ProductsPage = () => {
     "Accessories",
     "Coats",
     "Tops",
-    "Pants",
   ]);
 
   const [selectedCategory, setSelectedCategory] = useState("All");

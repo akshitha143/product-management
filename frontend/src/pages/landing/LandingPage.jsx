@@ -117,7 +117,7 @@ const LandingPage = ()=> {
                         <div className="img-container">
                             <span className="category">{product.category}</span>
                             {/* <span className="delete-btn"><RiDeleteBinLine/></span> */}
-                            {product.image && <img src="/images/product.jpg"  alt={product.name} />}
+                            {product.image && <img src={product.image}  alt={product.name} />}
                             <div className="img-overly"></div>
                         </div>
                         <div className="product-detiles">

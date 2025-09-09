@@ -67,8 +67,9 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding: 0px 4px;
     padding-top: 8px;
 }
 .product-detiles .price-btn-container .price{
@@ -89,9 +90,10 @@
     cursor: pointer;
 }
 .product-detiles .product-decription{
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 400;
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
     color:#525D6A;
     padding:4px;
     text-align: left;
