@@ -59,12 +59,12 @@ export default function HomePage() {
                     <div className="tag">
                         <div className="dot"></div> 
                         <p>New Collection 2024</p></div>
-                    <div className="title-section">
+                    <div className="hero-title-section">
                         <h1 className="hero-title">Fashion <br /> Revolution</h1>
-                        <p className="text-subtitle">
+                        <p className="hero-text-subtitle">
                             Where luxury meets innovation. Discover pieces that tell your story.
                         </p>
-                        <p className="text-description">
+                        <p className="hero-text-description">
                             From runway to reality - elevate your wardrobe with our exclusive designer collection
                         </p>
                     </div>

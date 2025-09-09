@@ -30,8 +30,6 @@ const addProduct = async (req, res) => {
       category,
       image,
     });
-
-    
     res.status(201).json({
       name: product.name,
       price: product.price,

@@ -1,22 +1,29 @@
 
+
+
+
+
+/* Default header (desktop) */
 .header {
-    height: 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #FAFAFA; /* clean white */
-    padding: 0.5rem 6rem;
-    border-bottom: 1px solid #eee; /* subtle divider */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: relative;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FAFAFA;
+  padding: 0.5rem 6rem;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
+    position: relative;
   font-family: "Pacifico", cursive;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #000; /* black text */
+  color: #000;
 }
 
 .nav {
@@ -24,33 +31,88 @@
   gap: 4rem;
 }
 
-a {
+.link, .active-link {
   text-decoration: none;
-  color: #111; /* dark gray/black */
   font-size: 1rem;
   font-weight: 500;
+  color: #111;
   transition: color 0.2s ease;
 }
-a:hover {
-  color: teal; /* highlight on hover */
+.link:hover {
+  color: teal;
 }
-.user-section{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap:0.5rem;
+.active-link {
+  color: teal;
 }
-.user-avatar{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(to right, #06b6d4, #3b82f6);;
+
+/* User section */
+.user-section {
+    position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
-.username{
-    color:#000;
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+.username {
+  color: #000;
+  font-weight: 500;
+}
+
+/* Hamburger icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color:black;
+}
+
+/* ============================= */
+/* Tablet & Mobile (≤ 1024px) */
+/* ============================= */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.5rem 2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
     font-weight: 500;
+  }
+
+  .nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #FAFAFA;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -99;
+  }
+
+  .nav-open {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-.active-link{
-    color:teal
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+  .username {
+    display: none; /* hide username on very small screens */
+  }
 }

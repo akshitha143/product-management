@@ -1,25 +1,57 @@
-// src/components/Header/Header.jsx
-import React from "react";
+// // src/components/Header/Header.jsx
+import React, { useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
-    const location = useLocation();
-    console.log(location.pathname);
-    return (
-        <header className="header">
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        <div className="logo">TrendyFash</div>
-        <nav className="nav">
-            <Link className={`${location.pathname === "/" ? "active-link" : "link"}`}  to="/">Home</Link>
-            <Link className={`${location.pathname === "/products" ? "active-link" : "link"}`} to="/products">Products</Link>
-            <Link className={`${location.pathname === "/addproduct" ? "active-link" : "link"}`} to="/addproduct">Add Product</Link>
-        </nav>
-        <div className="user-section">
-            <div className="user-avatar"></div>
-            <span className="username">John Doe</span>
-        </div>
-        </header>
-    );
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  return (
+    <header className="header">
+      {/* Logo */}
+      <div className="logo">TrendyFash</div>
+
+      
+      {/* Navigation Links */}
+      <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
+        <Link
+          className={`${location.pathname === "/" ? "active-link" : "link"}`}
+          to="/"
+          onClick={() => setMenuOpen(false)}
+        >
+          Home
+        </Link>
+        <Link
+          className={`${location.pathname === "/products" ? "active-link" : "link"}`}
+          to="/products"
+          onClick={() => setMenuOpen(false)}
+        >
+          Products
+        </Link>
+        <Link
+          className={`${location.pathname === "/addproduct" ? "active-link" : "link"}`}
+          to="/addproduct"
+          onClick={() => setMenuOpen(false)}
+        >
+          Add Product
+        </Link>
+      </nav>
+
+      {/* User Section */}
+      <div className="user-section">
+        <div className="user-avatar"></div>
+        <span className="username">Akshitha</span>
+      </div>
+
+      {/* Hamburger Icon (only visible on mobile/tablet) */}
+      <div className="menu-toggle" onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+    </header>
+  );
 }

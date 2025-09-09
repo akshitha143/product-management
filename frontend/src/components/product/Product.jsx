@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Product.css";
+import { useNavigate } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import DeleteConfirmModal from "../models/deletemodel/DeleteConfirmModal";
 const Product = ({product})=>{
     const [openModal, setOpenModal] = useState(false);
+    const navigate = useNavigate();
     return (
         <>
             <div className="product-card">
@@ -18,7 +20,7 @@ const Product = ({product})=>{
                     <p className="product-decription">"Do you want me to also generate a more realistic dataset (with descriptions, ratings, stock count), so"</p>
                     <div className="price-btn-container">
                         <p className="price">${product.price}</p>
-                        <button className="addcart-btn">Add to Cart</button>
+                        <button onClick={()=>{navigate("/edit-product/123",{ state: { product } })}} className="addcart-btn">Edit Product</button>
                     </div>
                 </div>
             </div>

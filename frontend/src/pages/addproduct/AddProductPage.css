@@ -1,0 +1,246 @@
+.add-product-page-section {
+  width: 100%;
+  height: auto;
+}
+
+.add-product-page-section .title-section {
+   width: 100%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add-product-page-section .title-section .page-title {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  color: black;
+}
+
+.add-product-page-section .title-section .subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+ text-align: center;
+  color: #666;
+color: #555;
+}
+
+.form-section {
+  width: 100%;
+  border-top: 1px solid #E5E6EA;
+  background-color: #F9FAFB;
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.product-section-container {
+  width: 60%;
+  padding: 2rem 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.product-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  color: black;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.7rem 1rem;
+  border: 2px solid #E5E6EA;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  color: black;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border: 2px solid rgb(95, 95, 227);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-submit {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-submit:hover {
+  background: #333;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.category-buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.category-btn {
+  grid-column: span 3 / span 3;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: 1px solid #E5E6EA;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-btn:hover {
+  border-color: black;
+}
+
+.category-btn-active {
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+/* ============================= */
+/* 🔹 Tablet (≤ 1024px) */
+/* ============================= */
+@media (max-width: 1024px) {
+  .product-section-container {
+    width: 80%;
+    padding: 1.5rem 2rem;
+  }
+
+  .add-product-page-section .title-section .page-title {
+    font-size: 2rem;
+  }
+
+  .category-buttons {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .category-btn {
+    grid-column: span 2 / span 2;
+    font-size: 13px;
+    padding: 10px 6px;
+  }
+}
+
+/* ============================= */
+/* 🔹 Mobile (≤ 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+  .form-section {
+    padding: 24px 16px;
+  }
+
+  .product-section-container {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .add-product-page-section .title-section .page-title {
+    font-size: 2rem;
+  }
+
+  .add-product-page-section .title-section .subtitle {
+    font-size: 1rem;
+  }
+
+  .category-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .category-btn {
+    grid-column: span 1 / span 1;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .btn-submit {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================= */
+/* 🔹 Small Mobile (≤ 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+  .product-section-container {
+    padding: 1rem;
+  }
+
+  .add-product-page-section .title-section .page-title {
+    font-size: 1.75rem;
+  }
+
+  .add-product-page-section .title-section .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+  .category-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .category-btn {
+    grid-column: span 1 / span 1;
+    font-size: 13px;
+    padding: 10px;
+  }
+  
+
+  .btn-submit {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}

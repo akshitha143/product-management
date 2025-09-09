@@ -5,6 +5,8 @@ import Header from "./components/header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/home/Homepage";
 import ProductsPage from "./pages/products/ProductsPage";
+import AddProductPage from "./pages/addproduct/AddProductPage";
+import EditProductPage from "./pages/editproduct/EditProductPage";
 
 
 export default function App() {
@@ -15,9 +17,8 @@ export default function App() {
         <Routes>
            <Route path="/" element={<HomePage />} />
            <Route path="/products" element={<ProductsPage />} />
-          {/*
-          
-          <Route path="/addproduct" element={<AddProductPage />} /> */}
+           <Route path="/addproduct" element={<AddProductPage />} />
+           <Route path="/edit-product/:id" element = {<EditProductPage/>}/>
         </Routes>
       </main>
       <Footer />
