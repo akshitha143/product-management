@@ -1,12 +1,163 @@
-# React + Vite
+# 🛍️ Product Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **full-stack web application** built with **React.js (Frontend)**, **Node.js + Express (Backend)**, and **MongoDB (Database)**.  
+It allows users to manage products with CRUD operations, sorting, and searching.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Overview
+This project demonstrates the integration of **React.js**, **Express.js**, and **MongoDB** to build a simple yet complete product management system.  
 
-## Expanding the ESLint configuration
+- **Frontend**: React.js with custom CSS (no frameworks).  
+- **Backend**: Node.js with Express, connected to MongoDB via Mongoose.  
+- **Database**: MongoDB Atlas.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚡ Technologies Used
+
+### Frontend
+- React.js (Functional Components + Hooks)
+- React Router DOM
+- Custom CSS (no UI frameworks)
+- Fetch API for backend communication
+
+### Backend
+- Node.js
+- Express.js
+- Mongoose (MongoDB ODM)
+- CORS, dotenv
+
+### Deployment
+- **Frontend**: Vercel  
+- **Backend**: Render  
+- **Database**: MongoDB Atlas  
+
+---
+
+## 📂 Folder Structure
+
+### Root
+
+product-management/
+├── backend/ # Node.js + Express backend
+├── frontend/ # React.js frontend
+└── README.md # This file
+
+
+### Backend (`/backend`)
+backend/
+├── src/
+│ ├── index.js # Main server entry
+│ ├── routes/ # API routes
+│ ├── controllers/ # Business logic
+│ ├── models/ # Mongoose schemas
+│ └── config/ # DB connection
+├── package.json
+└── .env
+
+
+### Frontend (`/frontend`)
+frontend/
+├── src/
+│ ├── components/ # Reusable UI components
+│ │ ├── Header/
+│ │ ├── Footer/
+│ │ └── ProductCard/
+│ ├── pages/ # App pages
+│ │ ├── home/
+│ │ ├── products/
+│ │ ├── addproduct/
+│ │ └── editproduct/
+│ ├── services/ # API service functions
+│ ├── App.jsx
+│ └── index.js
+├── package.json
+└── .env
+
+
+---
+
+## 📡 Backend API Endpoints
+
+| Method | Endpoint             | Description            |
+|--------|----------------------|------------------------|
+| GET    | `/api/products`      | Get all products       |
+| POST   | `/api/products`      | Add a new product      |
+| PUT    | `/api/products/:id`  | Update product by ID   |
+| DELETE | `/api/products/:id`  | Delete product by ID   |
+
+---
+
+## 🎨 Frontend Components & Pages
+
+### Components
+- **Header** → Navigation bar with logo, links, cart, and user profile.  
+- **Footer** → Brand info, quick links, social media icons.  
+- **ProductCard** → Reusable component for displaying a product.  
+
+### Pages
+- **HomePage** → Landing page with intro banner.  
+- **ProductsPage** → Displays products in a grid with sorting & delete.  
+- **AddProductPage** → Form to add a new product (with validation).  
+- **EditProductPage** → Update an existing product.  
+- **LandingPage** → Initial product showcase.  
+
+---
+
+## 🔗 GitHub Repository
+
+👉 [GitHub Repo Link](https://github.com/yourusername/product-management)
+
+### Clone the repository
+```bash
+git clone https://github.com/akshitha143/product-management.git
+cd product-management
+
+cd backend
+npm install
+npm start
+
+cd frontend
+npm install
+npm run dev   
+
+## 🚀 Deployment
+
+- **Frontend (React)** → Deployed on **Vercel**  
+  👉 https://product-management-sigma-one.vercel.app/
+
+- **Backend (Express)** → Deployed on **Render**  
+  👉 https://product-management-xowi.onrender.com/ 
+
+- **Database (MongoDB)** → Hosted on **MongoDB Atlas**  
+
+---
+
+## ✨ Features Implemented
+
+- ✅ Product CRUD (Create, Read, Update, Delete)  
+- ✅ Product sorting by price  
+- ✅ Product search by name  
+- ✅ Filter by categories 
+- ✅ Form validation (name, category, price, image URL, description)  
+- ✅ Delete confirmation  
+- ✅ Responsive UI with custom CSS animations  
+- ✅ Deployment with Vercel + Render  
+
+---
+
+## 🏁 Conclusion
+
+This project demonstrates a **full-stack MERN-style workflow** with:  
+
+- **Frontend (React)** for UI  
+- **Backend (Express)** for APIs  
+- **MongoDB (Atlas)** for storage  
+- **Vercel + Render** for deployment  
+
+It covers the **complete lifecycle** of a product management app: add → view → update → delete.  
+Future enhancements can include **authentication, pagination, and role-based access control**.  
+
+---
+
