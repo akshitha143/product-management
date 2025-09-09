@@ -9,9 +9,7 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-    origin: "https://product-management-sigma-one.vercel.app/",
-}));
+app.use(cors());
 
 app.use("/api/products", productRoutes);
 
