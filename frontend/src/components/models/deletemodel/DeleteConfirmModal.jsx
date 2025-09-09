@@ -1,6 +1,6 @@
 import React from "react";
 import "./DeleteConfirmModal.css";
-import { deleteProduct } from "../../../services/productservice";
+import { deleteProduct } from "../../../services/ProductService";
 
 const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, product }) => {
   if (!isOpen) return null; 

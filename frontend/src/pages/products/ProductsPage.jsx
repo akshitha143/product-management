@@ -3,7 +3,7 @@ import { PiMagnifyingGlassBold } from "react-icons/pi";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "./ProductsPage.css";
 import Product from "../../components/product/Product";
-import { getProducts } from "../../services/productservice";
+import { getProducts } from "../../services/ProductService";
 
 const ProductsPage = () => {
 //   const [products] = useState([
