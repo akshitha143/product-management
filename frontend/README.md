@@ -161,3 +161,10 @@ Future enhancements can include **authentication, pagination, and role-based acc
 
 ---
 
+
+![Home Page](./public/screenshots/img1.png)
+![Products Page](./public/screenshots/img2.png)
+![Add Product](./public/screenshots/img3.png)
+![Footer](./public/screenshots/img4.png)
+![Delete Product](./public/screenshots/img5.png)
+![Edit Product](./public/screenshots/img6.png)
