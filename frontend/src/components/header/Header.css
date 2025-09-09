@@ -1,0 +1,56 @@
+
+.header {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FAFAFA; /* clean white */
+    padding: 0.5rem 6rem;
+    border-bottom: 1px solid #eee; /* subtle divider */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000; /* black text */
+}
+
+.nav {
+  display: flex;
+  gap: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: #111; /* dark gray/black */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: teal; /* highlight on hover */
+}
+.user-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+}
+.user-avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #06b6d4, #3b82f6);;
+}
+.username{
+    color:#000;
+    font-weight: 500;
+}
+.active-link{
+    color:teal
+}

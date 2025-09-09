@@ -1,0 +1,9 @@
+.main-page{
+  width: 100vw;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
