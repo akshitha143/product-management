@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "./Footer.css";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -49,3 +49,6 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+export default Footer;
