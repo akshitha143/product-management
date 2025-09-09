@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AddProductPage.css";
-import { createProduct } from "../../services/ProductService";
+import { createProduct } from "../../services/productService";
 
 const AddProductPage = () => {
   const [formData, setFormData] = useState({

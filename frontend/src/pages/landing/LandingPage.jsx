@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import { getProducts } from "../../services/ProductService.js";
+import { getProducts } from "../../services/productService";
 
 const LandingPage = ()=> {
     const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React, {  useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "../addproduct/AddProductPage.css";
-import { updateProduct } from "../../services/ProductService";
+import { updateProduct } from "../../services/productService";
 
 const EditProductPage = () => {
   const { id } = useParams(); // get product ID from URL
