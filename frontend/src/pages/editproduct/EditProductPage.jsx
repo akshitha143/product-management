@@ -5,6 +5,7 @@ import { updateProduct } from "../../services/productService";
 
 const EditProductPage = () => {
   const { id } = useParams(); // get product ID from URL
+  const [loading,setLoading]=useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const defaultProduct = {
@@ -108,6 +109,7 @@ const EditProductPage = () => {
   e.preventDefault();
   if (validate()) {
     try {
+      setLoading(true);
       const updated = await updateProduct(id, formData); 
       console.log("Updated product:", updated);
 
@@ -117,6 +119,7 @@ const EditProductPage = () => {
       console.error("Update error:", err);
       alert("❌ Error updating product");
     }
+    setLoading(false);
   }
 };
 
@@ -209,8 +212,8 @@ const EditProductPage = () => {
             </div>
 
             {/* Submit */}
-            <button type="submit" className="btn-submit">
-              Update Product
+            <button type="submit" disabled={loading} className="btn-submit">
+              {loading?"Loading...":"Update Product"}
             </button>
           </form>
         </div>

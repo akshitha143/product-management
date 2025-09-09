@@ -49,6 +49,7 @@
 
 .model-btn.model-cancel {
   background: #242424;
+  color:white;
 }
 
 .model-btn.model-cancel:hover {

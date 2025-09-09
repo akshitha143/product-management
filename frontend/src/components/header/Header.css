@@ -112,7 +112,4 @@
   .logo {
     font-size: 1.4rem;
   }
-  .username {
-    display: none; /* hide username on very small screens */
-  }
 }

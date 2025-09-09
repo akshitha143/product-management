@@ -1,12 +1,15 @@
 import React from "react";
 import "./DeleteConfirmModal.css";
 import { deleteProduct } from "../../../services/productService";
+import { useState } from "react";
 
 const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, product }) => {
+  const [loading,setLoading]=useState(false);
   if (!isOpen) return null; 
   const handleDelete = async () => {
 
     try {
+      setLoading(true);
       await deleteProduct(product._id);
       onConfirm()
       alert("✅ Product deleted successfully!");
@@ -14,6 +17,7 @@ const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, product }) => {
       console.error("Delete error:", err);
       alert("❌ Error deleting product");
     }
+    setLoading(false);
   };
 
   return (
@@ -29,8 +33,8 @@ const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, product }) => {
           <button className="model-btn model-cancel" onClick={onClose}>
             Cancel
           </button>
-          <button className="model-btn model-delete" onClick={handleDelete}>
-            Delete
+          <button disabled={loading} className="model-btn model-delete" onClick={handleDelete}>
+            {loading?"Loading":"Delete"}
           </button>
         </div>
       </div>

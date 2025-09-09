@@ -7,6 +7,7 @@ import { getProducts } from "../../services/productService";
 
 const LandingPage = ()=> {
     const navigate = useNavigate();
+    const [loading,setLoading] = useState(false);
 //  const [products,] = useState([
 //   {
 //     _id: "1",
@@ -55,12 +56,14 @@ const LandingPage = ()=> {
     useEffect(()=>{
         const fetchProducts = async()=>{
             try{
+                setLoading(true);
                 const data = await getProducts();
                 setProducts(data.slice(0, 6));
             }
             catch(error){
                 console.error("Error fetching products:", error);
             }
+            setLoading(false);
         }
         fetchProducts();
     },[]);
@@ -112,6 +115,7 @@ const LandingPage = ()=> {
                 </p>
 
                 <div className="product-grid">
+                    {loading&&<p className="home-loding-text">Loading...</p>}
                     {products.map((product) => (
                     <div key={product._id} className="product-card">
                         <div className="img-container">

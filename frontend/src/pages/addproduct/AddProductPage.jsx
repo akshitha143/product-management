@@ -3,6 +3,7 @@ import "./AddProductPage.css";
 import { createProduct } from "../../services/productService";
 
 const AddProductPage = () => {
+  const [loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     price: "",
@@ -74,6 +75,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   if (validate()) {
     try {
+      setLoading(true);
       const newProduct = await createProduct(formData);
       console.log("Product created:", newProduct);
 
@@ -92,6 +94,7 @@ const handleSubmit = async (e) => {
       console.error("Error creating product:", error);
       alert("Failed to add product. Please try again.");
     }
+    setLoading(false);
   }
 };
 
@@ -186,9 +189,10 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Submit */}
-            <button type="submit" className="btn-submit">
-              Add Product
+            <button type="submit" disabled={loading}  className="btn-submit">
+              {loading?"Loading...":"Add Product"}
             </button>
+            
           </form>
         </div>
       </div>

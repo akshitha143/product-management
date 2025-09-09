@@ -6,102 +6,19 @@ import Product from "../../components/product/Product";
 import { getProducts } from "../../services/productService";
 
 const ProductsPage = () => {
-//   const [products] = useState([
-//     {
-//       _id: "1",
-//       name: "Pleated Skirt",
-//       price: 139,
-//       category: "Skirts",
-//       image: "https://via.placeholder.com/250x300?text=Pleated+Skirt",
-//     },
-//     {
-//       _id: "2",
-//       name: "Silk Blend Blazer",
-//       price: 299,
-//       category: "Jackets",
-//       image: "https://via.placeholder.com/250x300?text=Silk+Blazer",
-//     },
-//     {
-//       _id: "3",
-//       name: "Designer Midi Dress",
-//       price: 189,
-//       category: "Dresses",
-//       image: "https://via.placeholder.com/250x300?text=Designer+Dress",
-//     },
-//     {
-//       _id: "4",
-//       name: "Premium Denim Jacket",
-//       price: 159,
-//       category: "Jackets",
-//       image: "https://via.placeholder.com/250x300?text=Denim+Jacket",
-//     },
-//     {
-//       _id: "5",
-//       name: "Classic White Sneakers",
-//       price: 79,
-//       category: "Shoes",
-//       image: "https://via.placeholder.com/250x300?text=Sneakers",
-//     },
-//     {
-//       _id: "6",
-//       name: "Leather Handbag",
-//       price: 120,
-//       category: "Accessories",
-//       image: "https://via.placeholder.com/250x300?text=Handbag",
-//     },
-//     {
-//       _id: "7",
-//       name: "Wool Knit Sweater",
-//       price: 89,
-//       category: "Knitwear",
-//       image: "https://via.placeholder.com/250x300?text=Knit+Sweater",
-//     },
-//     {
-//       _id: "8",
-//       name: "Smartwatch Pro",
-//       price: 149,
-//       category: "Electronics",
-//       image: "https://via.placeholder.com/250x300?text=Smartwatch",
-//     },
-//     {
-//       _id: "9",
-//       name: "Trench Coat",
-//       price: 210,
-//       category: "Coats",
-//       image: "https://via.placeholder.com/250x300?text=Trench+Coat",
-//     },
-//     {
-//       _id: "10",
-//       name: "Casual T-Shirt",
-//       price: 39,
-//       category: "Tops",
-//       image: "https://via.placeholder.com/250x300?text=T-Shirt",
-//     },
-//     {
-//       _id: "11",
-//       name: "Slim Fit Jeans",
-//       price: 89,
-//       category: "Pants",
-//       image: "https://via.placeholder.com/250x300?text=Jeans",
-//     },
-//     {
-//       _id: "12",
-//       name: "Running Shoes",
-//       price: 110,
-//       category: "Shoes",
-//       image: "https://via.placeholder.com/250x300?text=Running+Shoes",
-//     },
-//   ]);
     const [products,setProducts] = useState([]);
+    const [loading,setLoading] = useState(false);
         useEffect(()=>{
             const fetchProducts = async()=>{
                 try{
+                    setLoading(true);
                     const data = await getProducts();
                     setProducts(data);
                 }
                 catch(error){
                     console.error("Error fetching products:", error);
                 }
+                setLoading(false);
             }
             fetchProducts();
         },[]);
@@ -216,6 +133,7 @@ const ProductsPage = () => {
             {/* Product Grid */}
             <div className="product-grid-container-wrapper">
               <div className="product-grid-container">
+                {loading&& <p className="product-loding-text">Loading...</p>}
                 {currentProducts.map((product, i) => (
                   <Product key={i} product={product} setProducts={setProducts} />
                 ))}
