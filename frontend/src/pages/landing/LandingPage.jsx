@@ -4,7 +4,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
-const HomePage = ()=> {
+const LandingPage = ()=> {
     const navigate = useNavigate();
     const [products,] = useState([
   {
@@ -122,4 +122,4 @@ const HomePage = ()=> {
 }
 
 
-export default HomePage;
+export default LandingPage;
