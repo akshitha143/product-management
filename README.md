@@ -38,14 +38,15 @@ This project demonstrates the integration of **React.js**, **Express.js**, and *
 ## 📂 Folder Structure
 
 ### Root
-
+```
 product-management/
 ├── backend/ # Node.js + Express backend
 ├── frontend/ # React.js frontend
 └── README.md # This file
-
+```
 
 ### Backend (`/backend`)
+```
 backend/
 ├── src/
 │ ├── index.js # Main server entry
@@ -55,10 +56,10 @@ backend/
 │ └── config/ # DB connection
 ├── package.json
 └── .env
-
+```
 
 ### Frontend (`/frontend`)
-
+```
 frontend/
 ├── src/
 │ ├── components/ # Reusable UI components
@@ -76,7 +77,7 @@ frontend/
 ├── package.json
 └── .env
 
-
+```
 ---
 
 ## 📡 Backend API Endpoints
