@@ -58,6 +58,7 @@ backend/
 
 
 ### Frontend (`/frontend`)
+
 frontend/
 ├── src/
 │ ├── components/ # Reusable UI components
@@ -122,6 +123,7 @@ cd frontend
 npm install
 npm run dev   
 
+---
 ## 🚀 Deployment
 
 - **Frontend (React)** → Deployed on **Vercel**  
@@ -162,9 +164,9 @@ Future enhancements can include **authentication, pagination, and role-based acc
 ---
 
 
-![Home Page](./public/screenshots/img1.png)
-![Products Page](./public/screenshots/img2.png)
-![Add Product](./public/screenshots/img3.png)
-![Footer](./public/screenshots/img4.png)
-![Delete Product](./public/screenshots/img5.png)
-![Edit Product](./public/screenshots/img6.png)
+![Home Page](frontend/public/screenshots/img1.png)
+![Products Page](frontend/public/screenshots/img2.png)
+![Add Product](frontend/public/screenshots/img3.png)
+![Footer](frontend/public/screenshots/img4.png)
+![Delete Product](frontend/public/screenshots/img5.png)
+![Edit Product](frontend/public/screenshots/img6.png)
