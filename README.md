@@ -166,9 +166,9 @@ Future enhancements can include **authentication, pagination, and role-based acc
 ---
 
 
-![Home Page](frontend/public/screenshots/img1.png)
-![Products Page](frontend/public/screenshots/img2.png)
-![Add Product](frontend/public/screenshots/img3.png)
-![Footer](frontend/public/screenshots/img4.png)
-![Delete Product](frontend/public/screenshots/img5.png)
-![Edit Product](frontend/public/screenshots/img6.png)
+![Home Page](https://github.com/akshitha143/product-management/blob/main/frontend/public/screenshorts/img1.png)
+![Products Page](https://github.com/akshitha143/product-management/blob/main/frontend/public/screenshorts/img2.png)
+![Add Product](https://github.com/akshitha143/product-management/blob/main/frontend/public/screenshorts/img3.png)
+![Footer](https://github.com/akshitha143/product-management/blob/main/frontend/public/screenshorts/img4.png)
+![Delete Product](https://github.com/akshitha143/product-management/blob/main/frontend/public/screenshorts/img5.png)
+![Edit Product](https://github.com/akshitha143/product-management/blob/main/frontend/public/screenshorts/img6.png)
