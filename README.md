@@ -123,7 +123,9 @@ cd frontend
 npm install
 npm run dev   
 
+```
 ---
+
 ## 🚀 Deployment
 
 - **Frontend (React)** → Deployed on **Vercel**  
