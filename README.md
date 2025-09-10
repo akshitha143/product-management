@@ -109,7 +109,7 @@ frontend/
 
 ## 🔗 GitHub Repository
 
-👉 [GitHub Repo Link](https://github.com/yourusername/product-management)
+👉 [GitHub Repo Link](https://github.com/akshitha143/product-management)
 
 ### Clone the repository
 ```bash
@@ -133,7 +133,6 @@ npm run dev
   👉 https://product-management-sigma-one.vercel.app/
 
 - **Backend (Express)** → Deployed on **Render**  
-  👉 https://product-management-xowi.onrender.com/ 
 
 - **Database (MongoDB)** → Hosted on **MongoDB Atlas**  
 
