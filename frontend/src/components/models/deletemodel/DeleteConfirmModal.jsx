@@ -12,10 +12,10 @@ const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, product }) => {
       setLoading(true);
       await deleteProduct(product._id);
       onConfirm()
-      alert("✅ Product deleted successfully!");
+      alert("Product deleted successfully!");
     } catch (err) {
       console.error("Delete error:", err);
-      alert("❌ Error deleting product");
+      alert("Error deleting product");
     }
     setLoading(false);
   };

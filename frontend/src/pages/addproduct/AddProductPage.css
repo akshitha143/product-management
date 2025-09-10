@@ -140,9 +140,9 @@ textarea {
   color: white;
 }
 
-/* ============================= */
-/* 🔹 Tablet (≤ 1024px) */
-/* ============================= */
+
+/* Tablet*/
+
 @media (max-width: 1024px) {
   .product-section-container {
     width: 80%;
@@ -164,9 +164,7 @@ textarea {
   }
 }
 
-/* ============================= */
-/* 🔹 Mobile (≤ 768px) */
-/* ============================= */
+/*Mobile*/
 @media (max-width: 768px) {
   .form-section {
     padding: 24px 16px;
@@ -202,9 +200,8 @@ textarea {
   }
 }
 
-/* ============================= */
-/* 🔹 Small Mobile (≤ 480px) */
-/* ============================= */
+/*Small Mobile*/
+
 @media (max-width: 480px) {
   .product-section-container {
     padding: 1rem;

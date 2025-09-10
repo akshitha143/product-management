@@ -12,11 +12,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      {/* Logo */}
       <div className="logo">TrendyFash</div>
-
-      
-      {/* Navigation Links */}
       <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
         <Link
           className={`${location.pathname === "/" ? "active-link" : "link"}`}
@@ -40,14 +36,10 @@ export default function Header() {
           Add Product
         </Link>
       </nav>
-
-      {/* User Section */}
       <div className="user-section">
         <div className="user-avatar"></div>
         <span className="username">Akshitha</span>
       </div>
-
-      {/* Hamburger Icon (only visible on mobile/tablet) */}
       <div className="menu-toggle" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
