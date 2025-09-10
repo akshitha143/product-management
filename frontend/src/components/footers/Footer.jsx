@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
+        
         <div className="footer-column">
           <h4>Quick Links</h4>
           <a href="/">Home</a>
@@ -42,7 +42,7 @@ const Footer = () => {
       
       </div>
 
-      {/* Bottom Bar */}
+      
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} TrendyFash. All rights reserved.</p>
       </div>

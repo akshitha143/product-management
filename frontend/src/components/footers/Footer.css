@@ -6,7 +6,6 @@
   font-size: 0.95rem;
 }
 
-/* Default layout (desktop) */
 .footer-container {
   display: flex;
   flex-direction: row;
@@ -125,9 +124,7 @@
   font-size: 0.85rem;
 }
 
-/* ============================= */
-/* 🔹 Tablet (≤ 1024px) */
-/* ============================= */
+/*Tablet*/
 @media (max-width: 1024px) {
   .footer-container {
     flex-wrap: wrap;
@@ -146,9 +143,7 @@
   }
 }
 
-/* ============================= */
-/* 🔹 Mobile (≤ 768px) */
-/* ============================= */
+/*Mobile*/
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -176,10 +171,7 @@
     width: 100%;
   }
 }
-
-/* ============================= */
-/* 🔹 Small Mobile (≤ 480px) */
-/* ============================= */
+/* Small Mobile */
 @media (max-width: 480px) {
   .footer {
     padding: 2rem 1rem 1rem;
